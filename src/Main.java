@@ -6,18 +6,21 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
+        // No. 1
         System.out.print("Input the temperature in Fahrenheit : ");
         double fahrenheit = sc.nextDouble();
         CelciusConverter celciusConvert = new CelciusConverter(fahrenheit);
         double celcius = celciusConvert.convertFahrenheitToCelcius();
         System.out.println(fahrenheit + " Fahrenheit to Celcius is : " + celcius + " °C\n");
-//
+
+        // No. 2
         System.out.print("Input the length in centimeter : ");
         double centimeter = sc.nextDouble();
         KilometersConverter centiToKilometers = new KilometersConverter(centimeter);
         double kilometers = centiToKilometers.convertCentimeterToKilometers();
         System.out.println(centimeter + " cm to Kilometers is " + kilometers + " km\n");
-//
+
+        // No. 3
         System.out.print("Input the number to check : ");
         int n = sc.nextInt();
         sc.nextLine();
@@ -25,6 +28,7 @@ public class Main {
         boolean isOdd = oddChecker.isOdd();
         System.out.println("is " + n + " even number : " + isOdd + "\n");
 
+        // No. 4
         System.out.print("Input the original words : ");
         String words = sc.nextLine();
 
@@ -34,6 +38,7 @@ public class Main {
         RemoveString removeString = new RemoveString(words, stringToRemove);
         System.out.println(removeString.removeTheFirstOccurrence() + "\n");
 
+        // No. 5
         System.out.print("Input word to check if palindrome : ");
         String word = sc.nextLine();
         PalindromeChecker palindromeChecker = new PalindromeChecker(word);
