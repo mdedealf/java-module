@@ -1,7 +1,4 @@
-import exercises.day2.CelciusConverter;
-import exercises.day2.KilometersConverter;
-import exercises.day2.OddChecker;
-import exercises.day2.RemoveString;
+import exercises.day2.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -25,5 +22,14 @@ public class Main {
         RemoveString removeString = new RemoveString(words, stringToRemove);
         String result = removeString.removeTheFirstOccurrence();
         System.out.println(result);
+
+        String word = "kodok";
+        PalindromeChecker palindromeChecker = new PalindromeChecker(word);
+        boolean isPalindrome = palindromeChecker.isPalindrome();
+
+        if (isPalindrome)
+            System.out.println(word + " is a palindrome");
+        else
+            System.out.println(word + " is not a palindrome");
     }
 }
