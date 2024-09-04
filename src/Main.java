@@ -140,7 +140,23 @@ public class Main {
         String secondWord = sc.nextLine().toLowerCase();
         AnagramChecker anagramChecker = new AnagramChecker(firstWord, secondWord);
         boolean isAnagram = anagramChecker.isTwoWordsAnagram();
-        System.out.println("Are two words anagrams : " + isAnagram);
+        System.out.println("Are two words anagrams : " + isAnagram+ "\n");
+
+        // No. 10
+        System.out.print("Input element size of an array : ");
+        int arrSizeElement = sc.nextInt();
+
+        // initialize array with custom element size
+        int [] arrNumber = new int[arrSizeElement];
+
+        // using for loop to input arrayNumber element 1 by 1
+        for (int i = 0; i < arrSizeElement; i++) {
+            System.out.print("Input array element["+i+"] : ");
+            arrNumber[i] = sc.nextInt();
+        }
+        FindTheSmallestNumber findTheSmallest = new FindTheSmallestNumber(arrNumber);
+        int smallestNumber = findTheSmallest.findSmallestElementNumber();
+        System.out.print("The smallest number from that array : " + smallestNumber + "\n");
 
         sc.close();
     }
