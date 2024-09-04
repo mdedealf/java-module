@@ -108,7 +108,13 @@ public class Main {
         System.out.print("Input String to reversed : ");
         String word = sc.nextLine();
         ReverseString reverseString = new ReverseString(word);
-        System.out.println("\nReversed result : " + reverseString.reverseString());
+        System.out.println("\nReversed result : " + reverseString.reverseString()+ "\n");
+
+        // No. 6
+        System.out.print("Input a positive number to generate fibonnaci sequence : ");
+        int numberSequence = sc.nextInt();
+        FibonacciSequenceGenerator fiboGenerator = new FibonacciSequenceGenerator(numberSequence);
+        fiboGenerator.fibonacciSequence();
 
         sc.close();
     }
