@@ -1,8 +1,5 @@
 import exercises.day2.*;
-import exercises.day3.FindLargestElementInArray;
-import exercises.day3.PrimeNumberChecker;
-import exercises.day3.SimpleCalculator;
-import exercises.day3.SumDigitsNumber;
+import exercises.day3.*;
 
 import java.util.Scanner;
 
@@ -85,7 +82,7 @@ public class Main {
         }
         FindLargestElementInArray findLargest = new FindLargestElementInArray(arrayNumber);
         int largestNumber = findLargest.findLargestElementArray();
-        System.out.println("\nThe largest element number from that array : " + largestNumber);
+        System.out.println("The largest element number from that array : " + largestNumber + "\n");
 
         // No. 4
         System.out.print("1 Adding \n2 Substracting \n3 Multiplying \n4 Dividing \nType the menu number to do What you want : ");
@@ -104,7 +101,14 @@ public class Main {
             case 4 -> simpleCalculator.dividing();
             default -> throw new IllegalStateException("Unexpected value: " + menuNumber);
         };
-        System.out.println("Result : " +calcResult);
+        System.out.println("Result : " +calcResult+ "\n");
+
+        // No. 5
+        sc.nextLine();
+        System.out.print("Input String to reversed : ");
+        String word = sc.nextLine();
+        ReverseString reverseString = new ReverseString(word);
+        System.out.println("\nReversed result : " + reverseString.reverseString());
 
         sc.close();
     }
