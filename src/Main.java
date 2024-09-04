@@ -1,4 +1,5 @@
 import exercises.day2.*;
+import exercises.day3.FindLargestElementInArray;
 import exercises.day3.PrimeNumberChecker;
 import exercises.day3.SumDigitsNumber;
 
@@ -68,6 +69,22 @@ public class Main {
         int givenNumber = sc.nextInt();
         PrimeNumberChecker primeNumberChecker = new PrimeNumberChecker(givenNumber);
         System.out.println("Is " + givenNumber + " prime number : " + primeNumberChecker.isPrimeNumber()+ "\n");
+
+        // No. 3
+        System.out.print("Input element size of an array : ");
+        int elementSize = sc.nextInt();
+
+        // initialize array with custom element size
+        int arrayNumber[] = new int[elementSize];
+
+        // using for loop to input arrayNumber element 1 by 1
+        for (int i = 0; i < elementSize; i++) {
+            System.out.print("Input array element["+i+"] : ");
+            arrayNumber[i] = sc.nextInt();
+        }
+        FindLargestElementInArray findLargest = new FindLargestElementInArray(arrayNumber);
+        int largestNumber = findLargest.findLargestElementArray();
+        System.out.println("\nThe largest element number from that array : " + largestNumber);
 
         sc.close();
     }
