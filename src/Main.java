@@ -72,13 +72,13 @@ public class Main {
 
         // No. 3
         System.out.print("Input element size of an array : ");
-        int elementSize = sc.nextInt();
+        int elementSizeArray = sc.nextInt();
 
         // initialize array with custom element size
-        int [] arrayNumber = new int[elementSize];
+        int [] arrayNumber = new int[elementSizeArray];
 
         // using for loop to input arrayNumber element 1 by 1
-        for (int i = 0; i < elementSize; i++) {
+        for (int i = 0; i < elementSizeArray; i++) {
             System.out.print("Input array element["+i+"] : ");
             arrayNumber[i] = sc.nextInt();
         }

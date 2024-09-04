@@ -18,7 +18,7 @@ public class PrimeNumberChecker {
             if (primeNumber % i == 0) return false;
         }
 
-        // return true (prime number) if no divisor found
+        // return true (prime number) if no divisor founded
         return true;
     }
 }
