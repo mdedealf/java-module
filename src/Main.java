@@ -1,4 +1,5 @@
 import exercises.day2.*;
+import exercises.day3.PrimeNumberChecker;
 import exercises.day3.SumDigitsNumber;
 
 import java.util.Scanner;
@@ -60,9 +61,13 @@ public class Main {
         int givenDigitsNumber = sc.nextInt();
         SumDigitsNumber countGivenDigits = new SumDigitsNumber(givenDigitsNumber);
         int result = countGivenDigits.sumGivenDigitsNumber();
-        System.out.println("Result from given digits " + givenDigitsNumber + " : " +result);
+        System.out.println("Result from given digits " + givenDigitsNumber + " : " + result + "\n");
 
         // No. 2
+        System.out.print("Input number to check if prime : ");
+        int givenNumber = sc.nextInt();
+        PrimeNumberChecker primeNumberChecker = new PrimeNumberChecker(givenNumber);
+        System.out.println("Is " + givenNumber + " prime number : " + primeNumberChecker.isPrimeNumber()+ "\n");
 
         sc.close();
     }
