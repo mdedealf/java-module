@@ -9,7 +9,11 @@ public class ReverseString {
 
     public String reverseString() {
         // converting String into char array
-        char [] characters = word.toCharArray();
+//        char [] characters = word.toCharArray();
+        char[] characters = new char[word.length()];
+        // copying char by char into the char[]
+        for (int i = 0; i < word.length(); i++)
+            characters[i] = word.charAt(i);
 
         // printing all the element of characters[]
         for (int i = characters.length - 1; i >= 0; i--)

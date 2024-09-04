@@ -88,9 +88,9 @@ public class Main {
         int menuNumber = sc.nextInt();
 
         System.out.print("Input first number : ");
-        double n1 = sc.nextInt();
+        double n1 = sc.nextDouble();
         System.out.print("Input second number : ");
-        double n2 = sc.nextInt();
+        double n2 = sc.nextDouble();
         SimpleCalculator simpleCalculator = new SimpleCalculator(n1, n2);
 
         var calcResult = switch (menuNumber) {

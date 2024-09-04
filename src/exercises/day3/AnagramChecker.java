@@ -24,7 +24,7 @@ public class AnagramChecker {
     }
 
     public boolean isTwoWordsAnagram() {
-        // check if the length of two string not equal then is is not an anagrams
+        // check if the length of two string not equal then it is not an anagrams
         if(word1.length() != word2.length()) return false;
 
         // convert two given strings into char array
