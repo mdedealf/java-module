@@ -1,7 +1,5 @@
 import exercises.day2.*;
-import exercises.day3.PrimeNumberChecker;
-import exercises.day3.SumDigitsNumber;
-
+import exercises.day3.*;
 import java.util.Scanner;
 
 public class Main {
@@ -68,6 +66,96 @@ public class Main {
         int givenNumber = sc.nextInt();
         PrimeNumberChecker primeNumberChecker = new PrimeNumberChecker(givenNumber);
         System.out.println("Is " + givenNumber + " prime number : " + primeNumberChecker.isPrimeNumber()+ "\n");
+
+        // No. 3
+        System.out.print("Input element size of an array : ");
+        int elementSizeArray = sc.nextInt();
+
+        // initialize array with custom element size
+        int [] arrayNumber = new int[elementSizeArray];
+
+        // using for loop to input arrayNumber element 1 by 1
+        for (int i = 0; i < elementSizeArray; i++) {
+            System.out.print("Input array element["+i+"] : ");
+            arrayNumber[i] = sc.nextInt();
+        }
+        FindLargestElementInArray findLargest = new FindLargestElementInArray(arrayNumber);
+        int largestNumber = findLargest.findLargestElementArray();
+        System.out.println("The largest element number from that array : " + largestNumber + "\n");
+
+        // No. 4
+        System.out.print("1 Adding \n2 Substracting \n3 Multiplying \n4 Dividing \nType the menu number to do What you want : ");
+        int menuNumber = sc.nextInt();
+
+        System.out.print("Input first number : ");
+        double n1 = sc.nextInt();
+        System.out.print("Input second number : ");
+        double n2 = sc.nextInt();
+        SimpleCalculator simpleCalculator = new SimpleCalculator(n1, n2);
+
+        var calcResult = switch (menuNumber) {
+            case 1 -> simpleCalculator.adding();
+            case 2 -> simpleCalculator.subtracting();
+            case 3 -> simpleCalculator.multiplying();
+            case 4 -> simpleCalculator.dividing();
+            default -> throw new IllegalStateException("Unexpected value: " + menuNumber);
+        };
+        System.out.println("Result : " +calcResult+ "\n");
+
+        // No. 5
+        sc.nextLine();
+        System.out.print("Input String to reversed : ");
+        String word = sc.nextLine();
+        ReverseString reverseString = new ReverseString(word);
+        System.out.println("\nReversed result : " + reverseString.reverseString()+ "\n");
+
+        // No. 6
+        System.out.print("Input a positive number to generate fibonnaci sequence : ");
+        int numberSequence = sc.nextInt();
+        FibonacciSequenceGenerator fiboGenerator = new FibonacciSequenceGenerator(numberSequence);
+        fiboGenerator.fibonacciSequence();
+
+        // No. 7
+        sc.nextLine();
+        System.out.print("\n\nInput a word to check vowels number : ");
+        String vowelsWord = sc.nextLine().toLowerCase();
+        CountVowelsNumber countVowels = new CountVowelsNumber(vowelsWord);
+        int countedVowels = countVowels.countVowelsNumber();
+        System.out.println("Vowels counter from ("+ vowelsWord + ") : " + countedVowels +"\n");
+
+        // No. 8
+        int [] randomNumbers = {64, 34, 25, 12, 22, 11, 90};
+        System.out.println("Before using Bubble sort : ");
+        BubbleSort.printArray(randomNumbers);
+        System.out.println("\nAfter using Bubble sort : ");
+        BubbleSort.bubbleSort(randomNumbers);
+        BubbleSort.printArray(randomNumbers);
+
+        // No. 9
+        System.out.println("\n\nAnagrams checker");
+        System.out.print("Input first word : ");
+        String firstWord = sc.nextLine().toLowerCase();
+        System.out.print("Input second word : ");
+        String secondWord = sc.nextLine().toLowerCase();
+        AnagramChecker anagramChecker = new AnagramChecker(firstWord, secondWord);
+        boolean isAnagram = anagramChecker.isTwoWordsAnagram();
+        System.out.println("Are two words anagrams : " + isAnagram+ "\n");
+
+        // No. 10
+        System.out.print("Input element size of an array : ");
+        int arrSizeElement = sc.nextInt();
+
+        // initialize array with custom element size
+        int [] arrNumber = new int[arrSizeElement];
+
+        // using for loop to input arrayNumber element 1 by 1
+        for (int i = 0; i < arrSizeElement; i++) {
+            System.out.print("Input array element["+i+"] : ");
+            arrNumber[i] = sc.nextInt();
+        }
+        FindTheSmallestNumber findTheSmallest = new FindTheSmallestNumber(arrNumber);
+        int smallestNumber = findTheSmallest.findSmallestElementNumber();
+        System.out.print("The smallest number from that array : " + smallestNumber + "\n");
 
         sc.close();
     }
