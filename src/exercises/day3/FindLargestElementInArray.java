@@ -16,7 +16,6 @@ public class FindLargestElementInArray {
             // check if current element / arrayNumber[i] > maxNumber then change the max value
             if(arrayNumber[i] > maxNumber) maxNumber = arrayNumber[i];
         }
-
         return maxNumber;
     }
 }

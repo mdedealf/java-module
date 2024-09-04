@@ -75,7 +75,7 @@ public class Main {
         int elementSize = sc.nextInt();
 
         // initialize array with custom element size
-        int arrayNumber[] = new int[elementSize];
+        int [] arrayNumber = new int[elementSize];
 
         // using for loop to input arrayNumber element 1 by 1
         for (int i = 0; i < elementSize; i++) {
