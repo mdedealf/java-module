@@ -132,6 +132,15 @@ public class Main {
         BubbleSort.bubbleSort(randomNumbers);
         BubbleSort.printArray(randomNumbers);
 
+        // No. 9
+        System.out.println("\n\nAnagrams checker");
+        System.out.print("Input first word : ");
+        String firstWord = sc.nextLine().toLowerCase();
+        System.out.print("Input second word : ");
+        String secondWord = sc.nextLine().toLowerCase();
+        AnagramChecker anagramChecker = new AnagramChecker(firstWord, secondWord);
+        boolean isAnagram = anagramChecker.isTwoWordsAnagram();
+        System.out.println("Are two words anagrams : " + isAnagram);
 
         sc.close();
     }
