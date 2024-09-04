@@ -1,6 +1,7 @@
 import exercises.day2.*;
 import exercises.day3.FindLargestElementInArray;
 import exercises.day3.PrimeNumberChecker;
+import exercises.day3.SimpleCalculator;
 import exercises.day3.SumDigitsNumber;
 
 import java.util.Scanner;
@@ -85,6 +86,25 @@ public class Main {
         FindLargestElementInArray findLargest = new FindLargestElementInArray(arrayNumber);
         int largestNumber = findLargest.findLargestElementArray();
         System.out.println("\nThe largest element number from that array : " + largestNumber);
+
+        // No. 4
+        System.out.print("1 Adding \n2 Substracting \n3 Multiplying \n4 Dividing \nType the menu number to do What you want : ");
+        int menuNumber = sc.nextInt();
+
+        System.out.print("Input first number : ");
+        double n1 = sc.nextInt();
+        System.out.print("Input second number : ");
+        double n2 = sc.nextInt();
+        SimpleCalculator simpleCalculator = new SimpleCalculator(n1, n2);
+
+        var calcResult = switch (menuNumber) {
+            case 1 -> simpleCalculator.adding();
+            case 2 -> simpleCalculator.subtracting();
+            case 3 -> simpleCalculator.multiplying();
+            case 4 -> simpleCalculator.dividing();
+            default -> throw new IllegalStateException("Unexpected value: " + menuNumber);
+        };
+        System.out.println("Result : " +calcResult);
 
         sc.close();
     }
