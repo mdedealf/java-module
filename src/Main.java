@@ -124,6 +124,14 @@ public class Main {
         int countedVowels = countVowels.countVowelsNumber();
         System.out.println("Vowels counter from ("+ vowelsWord + ") : " + countedVowels +"\n");
 
+        // No. 8
+        int [] randomNumbers = {64, 34, 25, 12, 22, 11, 90};
+        System.out.println("Before using Bubble sort : ");
+        BubbleSort.printArray(randomNumbers);
+        System.out.println("\nAfter using Bubble sort : ");
+        BubbleSort.bubbleSort(randomNumbers);
+        BubbleSort.printArray(randomNumbers);
+
 
         sc.close();
     }
