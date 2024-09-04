@@ -54,11 +54,15 @@ public class Main {
 
 
         // EXERCISE DAY 3
+
+        // No. 1
         System.out.print("Input some digits number : ");
         int givenDigitsNumber = sc.nextInt();
         SumDigitsNumber countGivenDigits = new SumDigitsNumber(givenDigitsNumber);
         int result = countGivenDigits.sumGivenDigitsNumber();
         System.out.println("Result from given digits " + givenDigitsNumber + " : " +result);
+
+        // No. 2
 
         sc.close();
     }

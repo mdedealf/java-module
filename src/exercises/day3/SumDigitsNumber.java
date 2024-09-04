@@ -9,8 +9,10 @@ public class SumDigitsNumber {
     }
 
     public int sumGivenDigitsNumber() {
-        // check if there are some digits numbers
+        // Get last digit : use modulo (digitNumber % 10)
+        // Remove last digit : use integer division (digitNumber = digitNumber / 10)
 
+        // Digit calculation : add the last digit to the sum, until all the digits have summed
         while (digitNumber != 0) {
             sumResult += digitNumber % 10;
             this.digitNumber = digitNumber / 10;
