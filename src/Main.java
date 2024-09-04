@@ -116,6 +116,15 @@ public class Main {
         FibonacciSequenceGenerator fiboGenerator = new FibonacciSequenceGenerator(numberSequence);
         fiboGenerator.fibonacciSequence();
 
+        // No. 7
+        sc.nextLine();
+        System.out.print("\n\nInput a word to check vowels number : ");
+        String vowelsWord = sc.nextLine().toLowerCase();
+        CountVowelsNumber countVowels = new CountVowelsNumber(vowelsWord);
+        int countedVowels = countVowels.countVowelsNumber();
+        System.out.println("Vowels counter from ("+ vowelsWord + ") : " + countedVowels +"\n");
+
+
         sc.close();
     }
 }
