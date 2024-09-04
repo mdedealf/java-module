@@ -1,6 +1,5 @@
 import exercises.day2.*;
 import exercises.day3.*;
-
 import java.util.Scanner;
 
 public class Main {
