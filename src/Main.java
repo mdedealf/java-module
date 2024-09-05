@@ -1,5 +1,6 @@
 import exercises.day2.*;
 import exercises.day3.*;
+import exercises.day4.InputChecker;
 import exercises.day4.PrintMultiplicationTable;
 import exercises.day4.PrintStarPattern;
 
@@ -173,6 +174,10 @@ public class Main {
         int inputStarPatternNumber = sc.nextInt();
         PrintStarPattern printStarPattern = new PrintStarPattern(inputStarPatternNumber);
         printStarPattern.printStar();
+
+        // No. 3
+        System.out.println();
+        InputChecker.runInputChecker();
 
         sc.close();
     }
