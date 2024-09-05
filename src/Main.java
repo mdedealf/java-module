@@ -1,8 +1,6 @@
 import exercises.day2.*;
 import exercises.day3.*;
-import exercises.day4.InputChecker;
-import exercises.day4.PrintMultiplicationTable;
-import exercises.day4.PrintStarPattern;
+import exercises.day4.*;
 
 import java.util.Scanner;
 
@@ -178,6 +176,17 @@ public class Main {
         // No. 3
         System.out.println();
         InputChecker.runInputChecker();
+
+        // No. 4
+        System.out.println();
+        NumberGuesser numberGuesser = new NumberGuesser();
+        numberGuesser.runNumberGuesser();
+
+        // No. 5
+        System.out.println();
+        UpperAndLowerCaseSwap upperAndLowerCaseSwap = new UpperAndLowerCaseSwap();
+        String resultAfterSwapped = upperAndLowerCaseSwap.upperAndLowerCaseSwapper();
+        System.out.println("Result : " + resultAfterSwapped);
 
         sc.close();
     }
