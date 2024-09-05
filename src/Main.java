@@ -1,6 +1,7 @@
 import exercises.day2.*;
 import exercises.day3.*;
 import exercises.day4.PrintMultiplicationTable;
+import exercises.day4.PrintStarPattern;
 
 import java.util.Scanner;
 
@@ -166,6 +167,12 @@ public class Main {
         int inputNumber = sc.nextInt();
         PrintMultiplicationTable printMultiplication = new PrintMultiplicationTable(inputNumber);
         printMultiplication.printMultiplicationTable();
+
+        // No. 2
+        System.out.print("\nInput a number to create star pattern table : ");
+        int inputStarPatternNumber = sc.nextInt();
+        PrintStarPattern printStarPattern = new PrintStarPattern(inputStarPatternNumber);
+        printStarPattern.printStar();
 
         sc.close();
     }
