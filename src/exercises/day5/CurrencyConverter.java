@@ -45,8 +45,8 @@ public class CurrencyConverter {
             // Convert the source to target currency
             double amountOfTargetMoney = amountOfSourceMoney * listOfExchanges.get(targetCurrency);
 
-            System.out.println(amountOfMoney + " " + sourceCurrency + " is equal to " + amountOfTargetMoney + " " + targetCurrency);
-        } else System.out.println("Please enter the correct currency! ");
+            System.out.println(amountOfMoney + " " + sourceCurrency + " is equal to " + amountOfTargetMoney + " " + targetCurrency + "\n");
+        } else System.out.println("Please enter the correct currency! \n");
 
         // initialize class object and give some parameters
         CurrencyConverter currencyConverter = new CurrencyConverter(amountOfMoney, sourceCurrency, targetCurrency);
