@@ -1,3 +1,4 @@
+import exercises.day5.CheckPairsOfNumbers;
 import exercises.day5.CurrencyConverter;
 import exercises.day5.FizzBuzz;
 import exercises.day5.RemoveOddNumbers;
@@ -202,6 +203,7 @@ public class Main {
         FizzBuzz.runFizzBuzz();
 
         // No. 5
+        CheckPairsOfNumbers.runFindTwoSumOfNumber();
 
         sc.close();
     }
