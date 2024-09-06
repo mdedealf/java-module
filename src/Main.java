@@ -1,3 +1,4 @@
+import exercises.day5.CurrencyConverter;
 import exercises.day5.RemoveOddNumbers;
 
 import java.util.Scanner;
@@ -189,12 +190,10 @@ public class Main {
         // EXERCISE DAY 5
 
         // No. 1
-//        System.out.print("Enter the amount of money : ");
-//        double amountOfMoney = sc.nextDouble();
-//        CurrencyConverter currencyConverter = new CurrencyConverter(amountOfMoney);
+        CurrencyConverter.runCurrencyConverter();
 
         // No. 3
-        RemoveOddNumbers.runRemoveOddNumbersFromArray();
+//        RemoveOddNumbers.runRemoveOddNumbersFromArray();
 
         sc.close();
     }
