@@ -1,6 +1,7 @@
-import exercises.day2.*;
-import exercises.day3.*;
-import exercises.day4.*;
+import exercises.day5.CheckPairsOfNumbers;
+import exercises.day5.CurrencyConverter;
+import exercises.day5.FizzBuzz;
+import exercises.day5.RemoveOddNumbers;
 
 import java.util.Scanner;
 
@@ -162,31 +163,47 @@ public class Main {
         // EXERCISE DAY 4
 
         // No. 1
-        System.out.print("Input a number to create multiplication table : ");
-        int inputNumber = sc.nextInt();
-        PrintMultiplicationTable printMultiplication = new PrintMultiplicationTable(inputNumber);
-        printMultiplication.printMultiplicationTable();
+//        System.out.print("Input a number to create multiplication table : ");
+//        int inputNumber = sc.nextInt();
+//        PrintMultiplicationTable printMultiplication = new PrintMultiplicationTable(inputNumber);
+//        printMultiplication.printMultiplicationTable();
 
         // No. 2
-        System.out.print("\nInput a number to create star pattern table : ");
-        int inputStarPatternNumber = sc.nextInt();
-        PrintStarPattern printStarPattern = new PrintStarPattern(inputStarPatternNumber);
-        printStarPattern.printStar();
+//        System.out.print("\nInput a number to create star pattern table : ");
+//        int inputStarPatternNumber = sc.nextInt();
+//        PrintStarPattern printStarPattern = new PrintStarPattern(inputStarPatternNumber);
+//        printStarPattern.printStar();
 
         // No. 3
-        System.out.println();
-        InputChecker.runInputChecker();
+//        System.out.println();
+//        InputChecker.runInputChecker();
 
         // No. 4
-        System.out.println();
-        NumberGuesser numberGuesser = new NumberGuesser();
-        numberGuesser.runNumberGuesser();
+//        System.out.println();
+//        NumberGuesser numberGuesser = new NumberGuesser();
+//        numberGuesser.runNumberGuesser();
 
         // No. 5
-        System.out.println();
-        UpperAndLowerCaseSwap upperAndLowerCaseSwap = new UpperAndLowerCaseSwap();
-        String resultAfterSwapped = upperAndLowerCaseSwap.upperAndLowerCaseSwapper();
-        System.out.println("Result : " + resultAfterSwapped);
+//        System.out.println();
+//        UpperAndLowerCaseSwap upperAndLowerCaseSwap = new UpperAndLowerCaseSwap();
+//        String resultAfterSwapped = upperAndLowerCaseSwap.upperAndLowerCaseSwapper();
+//        System.out.println("Result : " + resultAfterSwapped);
+
+        // EXERCISE DAY 5
+
+        // No. 1
+
+        // No. 2
+        CurrencyConverter.runCurrencyConverter();
+
+        // No. 3
+        RemoveOddNumbers.runRemoveOddNumbersFromArray();
+
+        // No. 4
+        FizzBuzz.runFizzBuzz();
+
+        // No. 5
+        CheckPairsOfNumbers.runFindTwoSumOfNumber();
 
         sc.close();
     }
