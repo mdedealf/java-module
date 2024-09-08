@@ -1,7 +1,4 @@
-import exercises.day5.CheckPairsOfNumbers;
-import exercises.day5.CurrencyConverter;
-import exercises.day5.FizzBuzz;
-import exercises.day5.RemoveOddNumbers;
+import exercises.day5.*;
 
 import java.util.Scanner;
 
@@ -192,6 +189,8 @@ public class Main {
         // EXERCISE DAY 5
 
         // No. 1
+        WordGuessingGame wordGuessingGame = new WordGuessingGame();
+        wordGuessingGame.runWordGuessingGame();
 
         // No. 2
         CurrencyConverter.runCurrencyConverter();
