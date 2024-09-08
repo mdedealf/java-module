@@ -193,16 +193,16 @@ public class Main {
         wordGuessingGame.runWordGuessingGame();
 
         // No. 2
-//        CurrencyConverter.runCurrencyConverter();
+        CurrencyConverter.runCurrencyConverter();
 
         // No. 3
-//        RemoveOddNumbers.runRemoveOddNumbersFromArray();
+        RemoveOddNumbers.runRemoveOddNumbersFromArray();
 
         // No. 4
-//        FizzBuzz.runFizzBuzz();
+        FizzBuzz.runFizzBuzz();
 
         // No. 5
-//        CheckPairsOfNumbers.runFindTwoSumOfNumber();
+        CheckPairsOfNumbers.runFindTwoSumOfNumber();
 
         sc.close();
     }
