@@ -13,100 +13,122 @@ package exercises.day5;
     /*  isGuessCorrect(String word, char guess) : check if the guessed
         character is in the word and return a boolean result
      */
-    /*  updateHiddenWord(String word, String hiddenWord, char guess): Update the hidden
-        word by revealing the correctly guessed character and return the new hidden word.
+    /*  updateHiddenWord(String word, String hiddenWord, char guess): Update
+        the hidden word by revealing the correctly guessed character and return
+        the new hidden word.
      */
     /*  displayGameResult(String wordToGuess, String hiddenWord, int attemptsLeft):
-        Show the final game result, including whether the player won or lost, and reveal the word if the player didn't guess it.
+        Show the final game result, including whether the player won or lost,
+        and reveal the word if the player didn't guess it.
      */
 
 import java.util.Scanner;
 
-interface WordGuessing {
-    int getRandomIndex(int arraySize);
-    String selectRandomWord();
-    String hideWord(String word);
-    char getPlayerGuess();
-    boolean isGuessCorrect(String word, char guess);
-    String updateHiddenWord(String word, String hiddenWord, char guess);
-//    String displayGameResult(String wordToGuess, String hiddenWord, int attemptsLeft);
-    void runWordGuessingGame();
-}
-
-public class WordGuessingGame implements WordGuessing {
+public class WordGuessingGame {
     Scanner scanner = new Scanner(System.in);
+    private final StringBuilder chosenHiddenWord = new StringBuilder();
 
-    @Override
     public int getRandomIndex(int arraySize) {
         return (int) (Math.random() * arraySize);
     }
 
-    @Override
-    public String selectRandomWord() {
-        String [] wordsCollections = {"hunter", "police", "programmer", "designer", "doctor", "house", "java"};
+    public String selectRandomWord(String [] wordsCollections) {
         int randomIndex = getRandomIndex(wordsCollections.length);
-//        System.out.println(randomIndex);
-
         return wordsCollections[randomIndex];
     }
 
-    @Override
     public String hideWord(String word) {
-        int wordLength = word.length();
-        char [] wordToUnderscore = new char[wordLength];
-        StringBuilder wordResult = new StringBuilder();
-
         // Replace each string character into underscore
-        for (int i = 0; i < wordLength; i++) {
-            wordToUnderscore[i] = '_';
+        for (int i = 0; i < word.length(); i++) {
+            if(word.charAt(i) != ' ') chosenHiddenWord.append('_');
         }
-
-        // Convert back into a string of underscore
-        for (int i = 0; i < wordLength; i++) {
-            wordResult.append(wordToUnderscore[i]);
-        }
-
-        return wordResult.toString();
+        return chosenHiddenWord.toString();
     }
 
-    @Override
     public char getPlayerGuess() {
         System.out.print("Guess a character : ");
         return scanner.next().charAt(0);
     }
 
-    @Override
     public boolean isGuessCorrect(String word, char guess) {
         // check if guess char is exist in the string word
         for (int i = 0; i < word.length(); i++) {
             if (word.charAt(i) == guess) return true;
         }
-
-        // if character doesn't exist in the string
-        return false;
+        return false;  // if character doesn't exist in the string
     }
 
-    @Override
-    public String updateHiddenWord(String word, String hiddenWord, char guess) {
-        return "";
+    public StringBuilder updateHiddenWord(String word, char guess) {
+        String normalizeWord = word.toLowerCase();
+
+        for (int i = 0; i < word.length(); i++) {
+            if (word.charAt(i) == Character.toLowerCase(guess)) {
+                chosenHiddenWord.setCharAt(i, guess);
+            }
+        }
+        return chosenHiddenWord;
     }
 
+    public void displayGameResult(String wordToGuess, String hiddenWord, int attemptsLeft) {
+        if(wordToGuess.equalsIgnoreCase(hiddenWord))
+            System.out.println("Congratulations! you guess the correct word. with remaining : "+attemptsLeft+ " attempt left.");
+        else
+            System.out.println("Unlucky! you can't guess the correct word. \nThe hidden word is : "+wordToGuess);
+    }
 
-    @Override
     public void runWordGuessingGame() {
-        // Object reference to class WordGuessingGame
-        WordGuessingGame wordGuessingGame = new WordGuessingGame();
+        System.out.println("Welcome to the Word Guessing Game!");
+        System.out.print("Do you want to play word guessing game (y/n) ? : ");
+        String wantToPlay = String.valueOf(scanner.next().charAt(0));
+        boolean isPlaying;
 
-        String randomWord = wordGuessingGame.selectRandomWord();
-        System.out.println(randomWord);
+        if (wantToPlay.equalsIgnoreCase("y")) {
+            System.out.println("\nGuess the blank word : ");
+            isPlaying = true;
+        }
+        else {
+            System.out.println("You don't want to play! try again later :)");
+            isPlaying = false;
+        }
 
-        String hiddenWord = wordGuessingGame.hideWord(randomWord);
-        System.out.println(hiddenWord);
+        String [] wordsCollections = {"hunter", "police", "java", "book", "doctor", "house", "java"};
+        // select a random index of word from a string [] wordCollections
+        String randomWord = selectRandomWord(wordsCollections);
+        // initialize max attempt
+        int maxAttempt = randomWord.length() + 2;
 
-        char guessedCharacter = wordGuessingGame.getPlayerGuess();
-        System.out.println(guessedCharacter);
+        // convert chosen random word into _____ of random word with the same length
+        if(isPlaying) {
+            String hiddenWord = hideWord(randomWord);
+            System.out.println("Clue: "+randomWord);
+            System.out.println(hiddenWord);
+        }
 
-        boolean isCharCorrect = wordGuessingGame.isGuessCorrect(randomWord,guessedCharacter);
-        System.out.println(isCharCorrect);
+        while (maxAttempt >= 1 && isPlaying) {
+            System.out.println("Your attempt left : " + maxAttempt);
+
+            // get player guessed character
+            char guessedCharacter = getPlayerGuess();
+
+            // check player entered character
+            boolean isGuessCharCorrect = isGuessCorrect(randomWord, guessedCharacter);
+
+            // check entered char guess is correct
+            String guessedWord = null;
+
+            if (isGuessCharCorrect) {
+                guessedWord = String.valueOf(updateHiddenWord(randomWord, guessedCharacter));
+                System.out.println("\n" + guessedWord);
+                if (chosenHiddenWord.toString().equals(randomWord)) {
+                    displayGameResult(randomWord, guessedWord, maxAttempt);
+                    maxAttempt = 0;
+                    break;
+                }
+            } else {
+                System.out.println("Wrong guess!");
+                System.out.println("\n" + chosenHiddenWord);
+            }
+            maxAttempt--;
+        }
     }
 }
