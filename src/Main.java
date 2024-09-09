@@ -189,20 +189,25 @@ public class Main {
         // EXERCISE DAY 5
 
         // No. 1
-        WordGuessingGame wordGuessingGame = new WordGuessingGame();
-        wordGuessingGame.runWordGuessingGame();
+//        WordGuessingGame wordGuessingGame = new WordGuessingGame();
+//        wordGuessingGame.runWordGuessingGame();
 
         // No. 2
-        CurrencyConverter.runCurrencyConverter();
+//        CurrencyConverter.runCurrencyConverter();
 
         // No. 3
-        RemoveOddNumbers.runRemoveOddNumbersFromArray();
+//        RemoveOddNumbers.runRemoveOddNumbersFromArray();
 
         // No. 4
-        FizzBuzz.runFizzBuzz();
+//        FizzBuzz.runFizzBuzz();
 
         // No. 5
-        CheckPairsOfNumbers.runFindTwoSumOfNumber();
+//        CheckPairsOfNumbers.runFindTwoSumOfNumber();
+
+        // EXERCISE DAY 6
+
+        // No. 1
+
 
         sc.close();
     }
