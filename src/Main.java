@@ -239,6 +239,12 @@ public class Main {
         ReverseTheString reverseTheString = new ReverseTheString(wordToReverse);
         reverseTheString.runReverseString();
 
+        // No. 6
+        System.out.println("\n\nNo 6");
+        int [] arrayToFindDuplicates = {4, 3, 2, 7, 8, 2, 3, 1};
+        FindAllDuplicates findAllDuplicates = new FindAllDuplicates(arrayToFindDuplicates);
+        findAllDuplicates.runFindAllDuplicates();
+
         sc.close();
     }
 }
