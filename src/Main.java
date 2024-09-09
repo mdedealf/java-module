@@ -1,5 +1,7 @@
 import exercises.day6.ArrayRotation;
 import exercises.day6.CheckDuplicatesArrayValues;
+import exercises.day6.RemoveDuplicatesElementsArray;
+import exercises.day6.ReverseTheString;
 
 import java.util.Scanner;
 
@@ -209,7 +211,7 @@ public class Main {
 
         // No. 1
         int dimension = 6;
-        int [] arrayOfNumber = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        int [] arrayOfNumber = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11};
         ArrayRotation arrayRotation = new ArrayRotation(dimension, arrayOfNumber);
         arrayRotation.runRotateArray();
 
@@ -217,6 +219,20 @@ public class Main {
         int [] arrayToCheck = {1, 2, 3, 4, 4, 5, 6, 7, 8, 9, 10};
         CheckDuplicatesArrayValues checkDuplicates = new CheckDuplicatesArrayValues(arrayToCheck);
         checkDuplicates.runCheckIfArrayContainsDuplicates();
+
+        // No. 3
+//        int [] arrayToRemoveDuplicates = {1, 1, 1, 2, 2, 3, 4, 4, 5, 5, 6, 7, 8, 9, 10, 10};
+//        RemoveDuplicatesElementsArray removeDuplicates = new RemoveDuplicatesElementsArray(arrayToRemoveDuplicates);
+//        removeDuplicates.runRemoveDuplicatesElements();
+
+        // No. 4
+
+
+        // No. 5
+        System.out.print("Enter string to reverse : ");
+        String wordToReverse = sc.nextLine();
+        ReverseTheString reverseTheString = new ReverseTheString(wordToReverse);
+        reverseTheString.runReverseString();
 
         sc.close();
     }
