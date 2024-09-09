@@ -13,9 +13,7 @@ public class CheckPairsOfNumbers {
         // For loop each of element array
         for(int i = 0; i < arrayOfNumbers.length; i++) {
             // For each element array, check for a match result
-//            System.out.println(i + " ");
             for(int j = i + 1; j < arrayOfNumbers.length; j++) {
-//                System.out.print(j);
                 // Check if two added numbers match the target number
                 if(arrayOfNumbers[i] + arrayOfNumbers[j] == numberOfSum) return new int[] {i, j};
             }
@@ -29,10 +27,9 @@ public class CheckPairsOfNumbers {
         int numberOfSum = 9;
 
         System.out.println("\nArray numbers : ");
-        for(int i = 0; i < arrayOfNumbers.length; i++) {
-            System.out.print(arrayOfNumbers[i]+ " ");
-        }
-        System.out.println("\nTarget from two sum of indicies : "+numberOfSum);
+        for (int arrayOfNumber : arrayOfNumbers) System.out.print(arrayOfNumber + " ");
+
+        System.out.println("\nTarget from two sum of indices : "+numberOfSum);
 
         CheckPairsOfNumbers checkPairsOfNumbers = new CheckPairsOfNumbers(arrayOfNumbers, numberOfSum);
         int[] result = findTwoSumOfNumber(arrayOfNumbers, numberOfSum);
