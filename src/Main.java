@@ -210,25 +210,29 @@ public class Main {
         // EXERCISE DAY 6
 
         // No. 1
+        System.out.println("No 1");
         int dimension = 6;
         int [] arrayOfNumber = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11};
         ArrayRotation arrayRotation = new ArrayRotation(dimension, arrayOfNumber);
         arrayRotation.runRotateArray();
 
         // No. 2
+        System.out.println("\nNo 2");
         int [] arrayToCheck = {1, 2, 3, 4, 4, 5, 6, 7, 8, 9, 10};
         CheckDuplicatesArrayValues checkDuplicates = new CheckDuplicatesArrayValues(arrayToCheck);
         checkDuplicates.runCheckIfArrayContainsDuplicates();
 
         // No. 3
-//        int [] arrayToRemoveDuplicates = {1, 1, 1, 2, 2, 3, 4, 4, 5, 5, 6, 7, 8, 9, 10, 10};
-//        RemoveDuplicatesElementsArray removeDuplicates = new RemoveDuplicatesElementsArray(arrayToRemoveDuplicates);
-//        removeDuplicates.runRemoveDuplicatesElements();
+        System.out.println("\nNo 3");
+        int [] arrayToRemoveDuplicates = {1, 1, 1, 2, 2, 3, 4, 4, 5, 5, 6, 7, 8, 9, 10, 10};
+        RemoveDuplicatesElementsArray removeDuplicates = new RemoveDuplicatesElementsArray(arrayToRemoveDuplicates, sc);
+        removeDuplicates.runRemoveDuplicatesElements();
 
         // No. 4
 
 
         // No. 5
+        System.out.println("\n\nNo 5");
         System.out.print("Enter string to reverse : ");
         String wordToReverse = sc.nextLine();
         ReverseTheString reverseTheString = new ReverseTheString(wordToReverse);

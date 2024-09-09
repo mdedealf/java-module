@@ -52,5 +52,6 @@ public class ArrayRotation {
         for (int j : arrayAfterRotated) {
             System.out.print(j + " ");
         }
+        System.out.println();
     }
 }

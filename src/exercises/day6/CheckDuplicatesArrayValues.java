@@ -20,7 +20,7 @@ public class CheckDuplicatesArrayValues {
     }
 
     public void runCheckIfArrayContainsDuplicates() {
-        if(checkIfArrayContainsDuplicates()) System.out.println("\n\nThe array contains duplicates\n");
-        else System.out.println("\n\nThe array does not contain duplicates\n");
+        if(checkIfArrayContainsDuplicates()) System.out.println("The array contains duplicates");
+        else System.out.println("The array does not contain duplicates");
     }
 }
