@@ -1,4 +1,5 @@
 import exercises.day5.*;
+import exercises.day6.ArrayRotation;
 
 import java.util.Scanner;
 
@@ -207,7 +208,10 @@ public class Main {
         // EXERCISE DAY 6
 
         // No. 1
-
+        int dimension = 6;
+        int [] arrayOfNumber = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        ArrayRotation arrayRotation = new ArrayRotation(dimension, arrayOfNumber);
+        arrayRotation.runRotateArray();
 
         sc.close();
     }
