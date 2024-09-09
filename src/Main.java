@@ -246,7 +246,12 @@ public class Main {
         findAllDuplicates.runFindAllDuplicates();
 
         // No. 7
-
+        System.out.println("\n\nNo 7");
+        int [] temperatures = {73, 74, 75, 71, 69, 72, 76, 73};
+//        int [] temperatures = {30, 40, 50, 60};
+//        int [] temperatures = {30, 60, 90};
+        DaysToWarmer daysToWarmer = new DaysToWarmer(temperatures);
+        daysToWarmer.runDayToWaitToWarmer();
 
         sc.close();
     }
