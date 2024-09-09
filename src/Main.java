@@ -240,10 +240,13 @@ public class Main {
         reverseTheString.runReverseString();
 
         // No. 6
-        System.out.println("\n\nNo 6");
+        System.out.println("\nNo 6");
         int [] arrayToFindDuplicates = {4, 3, 2, 7, 8, 2, 3, 1};
         FindAllDuplicates findAllDuplicates = new FindAllDuplicates(arrayToFindDuplicates);
         findAllDuplicates.runFindAllDuplicates();
+
+        // No. 7
+
 
         sc.close();
     }

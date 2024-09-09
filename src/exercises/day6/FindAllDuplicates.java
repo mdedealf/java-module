@@ -28,8 +28,17 @@ public class FindAllDuplicates {
         if(array.length == 1 || array.length == 0) {
             System.out.println("[]");
         } else {
+            System.out.println("Original array : ");
+            for(int i : array) System.out.print(i +" ");
+
+            System.out.println("\nDuplicate elements : ");
             List<Integer> duplicateArray = findAllDuplicatesArray();
-            for(int list : duplicateArray) System.out.print(list + ",");
+            System.out.print("[");
+            for(int i = 0; i < duplicateArray.size(); i++) {
+                System.out.print(duplicateArray.get(i));
+                 if(i < duplicateArray.size() - 1) System.out.print(", ");
+            }
+            System.out.print("]");
         }
     }
 }
