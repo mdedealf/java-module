@@ -1,5 +1,5 @@
-import exercises.day5.*;
 import exercises.day6.ArrayRotation;
+import exercises.day6.CheckDuplicatesArrayValues;
 
 import java.util.Scanner;
 
@@ -212,6 +212,11 @@ public class Main {
         int [] arrayOfNumber = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
         ArrayRotation arrayRotation = new ArrayRotation(dimension, arrayOfNumber);
         arrayRotation.runRotateArray();
+
+        // No. 2
+        int [] arrayToCheck = {1, 2, 3, 4, 4, 5, 6, 7, 8, 9, 10};
+        CheckDuplicatesArrayValues checkDuplicates = new CheckDuplicatesArrayValues(arrayToCheck);
+        checkDuplicates.runCheckIfArrayContainsDuplicates();
 
         sc.close();
     }
