@@ -1,7 +1,4 @@
-import exercises.day6.ArrayRotation;
-import exercises.day6.CheckDuplicatesArrayValues;
-import exercises.day6.RemoveDuplicatesElementsArray;
-import exercises.day6.ReverseTheString;
+import exercises.day6.*;
 
 import java.util.Scanner;
 
@@ -229,7 +226,11 @@ public class Main {
         removeDuplicates.runRemoveDuplicatesElements();
 
         // No. 4
-
+        System.out.println("\n\nNo 4");
+        int [] arrayToRemoveOccurrences = {1, 2, 1, 3, 5, 1};
+        int key = 2;
+        RemoveAllOccurrences removeAllOccurrences = new RemoveAllOccurrences(arrayToRemoveOccurrences, key);
+        removeAllOccurrences.runRemoveAllOccurrences();
 
         // No. 5
         System.out.println("\n\nNo 5");
