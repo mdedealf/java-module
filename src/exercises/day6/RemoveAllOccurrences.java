@@ -1,6 +1,7 @@
 package exercises.day6;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class RemoveAllOccurrences {
@@ -8,7 +9,7 @@ public class RemoveAllOccurrences {
     private final int key;
 
     public RemoveAllOccurrences(int [] arrayOfNumbers, int key) {
-        this.arrayOfNumbers = arrayOfNumbers;
+        this.arrayOfNumbers = Arrays.copyOf(arrayOfNumbers, arrayOfNumbers.length);
         this.key = key;
     }
 

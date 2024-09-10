@@ -1,12 +1,13 @@
 package exercises.day6;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class DaysToWarmer {
     private final int [] temperatures;
 
     public DaysToWarmer(int [] temperatures) {
-        this.temperatures = temperatures;
+        this.temperatures = Arrays.copyOf(temperatures, temperatures.length);
     }
 
     public int [] dayToWaitToWarmer() {

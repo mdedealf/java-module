@@ -1,10 +1,12 @@
 package exercises.day6;
 
+import java.util.Arrays;
+
 public class CheckDuplicatesArrayValues {
     private final int [] arrayOfNumbers;
 
     public CheckDuplicatesArrayValues(int [] arrayOfNumbers) {
-        this.arrayOfNumbers = arrayOfNumbers;
+        this.arrayOfNumbers = Arrays.copyOf(arrayOfNumbers, arrayOfNumbers.length);
     }
 
     private boolean checkIfArrayContainsDuplicates() {

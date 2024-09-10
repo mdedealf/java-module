@@ -1,12 +1,14 @@
 package exercises.day6;
 
+import java.util.Arrays;
+
 public class ArrayRotation {
     private final int dimension;
     private final int [] arrayOfNumbers;
 
     public ArrayRotation(int dimension, int [] arrayOfNumbers) {
         this.dimension = dimension;
-        this.arrayOfNumbers = arrayOfNumbers;
+        this.arrayOfNumbers = Arrays.copyOf(arrayOfNumbers,arrayOfNumbers.length); // making deep copy
     }
 
     private int [] rotateArrayIndexValue() {
@@ -23,7 +25,7 @@ public class ArrayRotation {
             arrIdxStart++;
         }
 
-        // store array index from start index(0) to - d into modified array
+        // store array index from start index(dimension) to - last dimension into modified array
         for(int i = 0; i < dimension; i++) {
             arrTempValues[arrIdxStart] = arrayOfNumbers[i];
             arrIdxStart++;

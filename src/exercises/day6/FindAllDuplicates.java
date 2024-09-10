@@ -1,13 +1,14 @@
 package exercises.day6;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class FindAllDuplicates {
     private final int [] array;
 
     public FindAllDuplicates(int [] array) {
-        this.array = array;
+        this.array = Arrays.copyOf(array, array.length);
     }
 
     private List<Integer> findAllDuplicatesArray() {

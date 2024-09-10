@@ -1,6 +1,7 @@
 package exercises.day6;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -9,7 +10,7 @@ public class RemoveDuplicatesElementsArray {
     private final Scanner scanner;
 
     public RemoveDuplicatesElementsArray(int [] array, Scanner scanner) {
-        this.array = array;
+        this.array = Arrays.copyOf(array, array.length);
         this.scanner = scanner;
     }
 
