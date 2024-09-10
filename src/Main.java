@@ -1,5 +1,8 @@
 import exercises.day6.*;
+import exercises.day7.CalculateAverage;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -207,51 +210,67 @@ public class Main {
         // EXERCISE DAY 6
 
         // No. 1
-        System.out.println("No 1");
-        int dimension = 6;
-        int [] arrayOfNumber = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11};
-        ArrayRotation arrayRotation = new ArrayRotation(dimension, arrayOfNumber);
-        arrayRotation.runRotateArray();
+//        System.out.println("No 1");
+//        int dimension = 6;
+//        int [] arrayOfNumber = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11};
+//        ArrayRotation arrayRotation = new ArrayRotation(dimension, arrayOfNumber);
+//        arrayRotation.runRotateArray();
 
         // No. 2
-        System.out.println("\nNo 2");
-        int [] arrayToCheck = {1, 2, 3, 4, 4, 5, 6, 7, 8, 9, 10};
-        CheckDuplicates checkDuplicates = new CheckDuplicates(arrayToCheck);
-        checkDuplicates.runCheckIfArrayContainsDuplicates();
+//        System.out.println("\nNo 2");
+//        int [] arrayToCheck = {1, 2, 3, 4, 4, 5, 6, 7, 8, 9, 10};
+//        CheckDuplicates checkDuplicates = new CheckDuplicates(arrayToCheck);
+//        checkDuplicates.runCheckIfArrayContainsDuplicates();
 
         // No. 3
-        System.out.println("\nNo 3");
-        int [] arrayToRemoveDuplicates = {1, 1, 1, 2, 2, 3, 4, 4, 5, 5, 6, 7, 8, 9, 10, 10};
-        RemoveDuplicates removeDuplicates = new RemoveDuplicates(arrayToRemoveDuplicates, sc);
-        removeDuplicates.runRemoveDuplicatesElements();
+//        System.out.println("\nNo 3");
+//        int [] arrayToRemoveDuplicates = {1, 1, 1, 2, 2, 3, 4, 4, 5, 5, 6, 7, 8, 9, 10, 10};
+//        RemoveDuplicates removeDuplicates = new RemoveDuplicates(arrayToRemoveDuplicates, sc);
+//        removeDuplicates.runRemoveDuplicatesElements();
 
         // No. 4
-        System.out.println("\n\nNo 4");
-        int [] arrayToRemoveOccurrences = {1, 2, 1, 3, 5, 1};
-        int key = 2;
-        RemoveAllOccurrences removeAllOccurrences = new RemoveAllOccurrences(arrayToRemoveOccurrences, key);
-        removeAllOccurrences.runRemoveAllOccurrences();
+//        System.out.println("\n\nNo 4");
+//        int [] arrayToRemoveOccurrences = {1, 2, 1, 3, 5, 1};
+//        int key = 2;
+//        RemoveAllOccurrences removeAllOccurrences = new RemoveAllOccurrences(arrayToRemoveOccurrences, key);
+//        removeAllOccurrences.runRemoveAllOccurrences();
 
         // No. 5
-        System.out.println("\n\nNo 5");
-        System.out.print("Enter string to reverse : ");
-        String wordToReverse = sc.nextLine();
-        ReverseTheString reverseTheString = new ReverseTheString(wordToReverse);
-        reverseTheString.runReverseString();
+//        System.out.println("\n\nNo 5");
+//        System.out.print("Enter string to reverse : ");
+//        String wordToReverse = sc.nextLine();
+//        ReverseTheString reverseTheString = new ReverseTheString(wordToReverse);
+//        reverseTheString.runReverseString();
 
         // No. 6
-        System.out.println("\nNo 6");
-        int [] arrayToFindDuplicates = {4, 3, 2, 7, 8, 2, 3, 1};
-        FindAllDuplicates findAllDuplicates = new FindAllDuplicates(arrayToFindDuplicates);
-        findAllDuplicates.runFindAllDuplicates();
+//        System.out.println("\nNo 6");
+//        int [] arrayToFindDuplicates = {4, 3, 2, 7, 8, 2, 3, 1};
+//        FindAllDuplicates findAllDuplicates = new FindAllDuplicates(arrayToFindDuplicates);
+//        findAllDuplicates.runFindAllDuplicates();
 
         // No. 7
-        System.out.println("\n\nNo 7");
-        int [] temperatures = {73, 74, 75, 71, 69, 72, 76, 73};
+//        System.out.println("\n\nNo 7");
+//        int [] temperatures = {73, 74, 75, 71, 69, 72, 76, 73};
 //        int [] temperatures = {30, 40, 50, 60};
 //        int [] temperatures = {30, 60, 90};
-        DaysToWarmer daysToWarmer = new DaysToWarmer(temperatures);
-        daysToWarmer.runDayToWaitToWarmer();
+//        DaysToWarmer daysToWarmer = new DaysToWarmer(temperatures);
+//        daysToWarmer.runDayToWaitToWarmer();
+
+        // No. 7 Solution 2
+//        List<Integer> temperaturesStack = new ArrayList<>();
+//        temperaturesStack.add(73);
+//        temperaturesStack.add(74);
+//        temperaturesStack.add(75);
+//        temperaturesStack.add(71);
+//        temperaturesStack.add(69);
+//        temperaturesStack.add(72);
+//        temperaturesStack.add(76);
+//        temperaturesStack.add(73);
+
+        // EXERCISE DAY 7
+        CalculateAverage calculate = new CalculateAverage(sc);
+        double average = calculate.calculateAverage();
+        System.out.println("Average : " +average);
 
         sc.close();
     }
