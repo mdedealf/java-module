@@ -2,10 +2,10 @@ package exercises.day6;
 
 import java.util.Arrays;
 
-public class CheckDuplicatesArrayValues {
+public class CheckDuplicates {
     private final int [] arrayOfNumbers;
 
-    public CheckDuplicatesArrayValues(int [] arrayOfNumbers) {
+    public CheckDuplicates(int [] arrayOfNumbers) {
         this.arrayOfNumbers = Arrays.copyOf(arrayOfNumbers, arrayOfNumbers.length);
     }
 

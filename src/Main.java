@@ -216,13 +216,13 @@ public class Main {
         // No. 2
         System.out.println("\nNo 2");
         int [] arrayToCheck = {1, 2, 3, 4, 4, 5, 6, 7, 8, 9, 10};
-        CheckDuplicatesArrayValues checkDuplicates = new CheckDuplicatesArrayValues(arrayToCheck);
+        CheckDuplicates checkDuplicates = new CheckDuplicates(arrayToCheck);
         checkDuplicates.runCheckIfArrayContainsDuplicates();
 
         // No. 3
         System.out.println("\nNo 3");
         int [] arrayToRemoveDuplicates = {1, 1, 1, 2, 2, 3, 4, 4, 5, 5, 6, 7, 8, 9, 10, 10};
-        RemoveDuplicatesElementsArray removeDuplicates = new RemoveDuplicatesElementsArray(arrayToRemoveDuplicates, sc);
+        RemoveDuplicates removeDuplicates = new RemoveDuplicates(arrayToRemoveDuplicates, sc);
         removeDuplicates.runRemoveDuplicatesElements();
 
         // No. 4
