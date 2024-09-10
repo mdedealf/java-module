@@ -1,7 +1,8 @@
-import exercises.day6.*;
 import exercises.day7.CalculateAverage;
+import exercises.day7.CsvFileReader;
 
-import java.util.ArrayList;
+import java.io.IOException;
+import java.nio.file.NoSuchFileException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -268,9 +269,33 @@ public class Main {
 //        temperaturesStack.add(73);
 
         // EXERCISE DAY 7
+
+        // No. 1
         CalculateAverage calculate = new CalculateAverage(sc);
         double average = calculate.calculateAverage();
         System.out.println("Average : " +average);
+
+        // No. 2
+        List [] csvData =  CsvFileReader.processCsvData();
+        List <String> productName = csvData[0];
+        List <Integer> totalSold = csvData[1];
+        List <Double> itemPrice = csvData[2];
+
+        // calculate total sales
+        CsvFileReader csvFileReader = new CsvFileReader();
+
+        System.out.println();
+        double totalSales = csvFileReader.totalSales(totalSold, itemPrice);
+        System.out.println("Total sales : " +totalSales);
+
+        int totalProductSold = csvFileReader.totalSold(totalSold);
+        System.out.println("Total sold : " + totalProductSold);
+
+        String mostBought = csvFileReader.mostBoughtProduct(totalSold, productName);
+        System.out.println("Most bought Product : " + mostBought);
+
+        String leastBought = csvFileReader.leastBoughtProduct(totalSold, productName);
+        System.out.println("Least bought Product : " + leastBought);
 
         sc.close();
     }

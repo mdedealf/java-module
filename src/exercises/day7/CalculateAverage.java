@@ -1,7 +1,5 @@
 package exercises.day7;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class CalculateAverage {
@@ -32,7 +30,7 @@ public class CalculateAverage {
             } catch (NumberFormatException e) {
                 // check if failed to parsing the data
                 isCounting = false;
-                System.out.println("Invalid input data!");
+                System.out.println("Invalid input. Please enter a valid number or 'q' to finish.");
             }
         }
 
@@ -40,7 +38,7 @@ public class CalculateAverage {
         try {
             if(counterNumber > 0) average = sum / counterNumber;
         } catch (NumberFormatException e) {
-            System.out.println("Invalid number entered!");
+            System.out.println("Invalid input. Please enter a valid number or 'q' to finish.");
         }
 
         return average;
