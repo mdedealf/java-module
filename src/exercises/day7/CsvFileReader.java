@@ -9,19 +9,23 @@ import java.util.List;
 
 public class CsvFileReader {
 
-    private static String[] exctractCsvFile() {
-        String filePath = "D:\\Bootcamp\\learn-java\\src\\resources\\product_sales_data.csv";
+    private static String[] extractCsvFile() {
+        String FILE_PATH = "D:\\Bootcamp\\learn-java\\src\\resources\\product_sales_data.csv";
         String line = "";
-        String headers;
+        String headers = "Product Name,Total Sold,Item Price";
 
         ArrayList<String> csvData = new ArrayList<>();
 
         try {
             // works same like using Scanner
-            BufferedReader br = new BufferedReader(new FileReader(filePath));
+            BufferedReader br = new BufferedReader(new FileReader(FILE_PATH));
 
             // store header row data to skip it added into arrayList
-            headers = br.readLine();
+            String checkHeaders = br.readLine();
+
+            if(headers == null || !headers.equalsIgnoreCase(checkHeaders)) {
+                throw new IllegalArgumentException("Something went wrong: Invalid CSV file format");
+            }
 
             // while next line not null store the line by line data
             while ((line = br.readLine()) != null) {
@@ -31,6 +35,8 @@ public class CsvFileReader {
             System.out.println("File / path is not found.");
         } catch (IOException e) {
             System.out.println("Something wrong with IO");
+        } catch (NumberFormatException e) {
+            System.out.println("Some data have invalid format.");
         } catch (Exception e) {
             System.out.println("Something went wrong");
         }
@@ -38,7 +44,7 @@ public class CsvFileReader {
     }
 
     public static List[] processCsvData() {
-        String[] csvData = exctractCsvFile();
+        String[] csvData = extractCsvFile();
         ArrayList<String> productName = new ArrayList<>();
         ArrayList<Integer> totalSold = new ArrayList<>();
         ArrayList<Double> itemPrice = new ArrayList<>();

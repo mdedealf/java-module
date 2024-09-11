@@ -38,7 +38,7 @@ public class CalculateAverage {
         try {
             if(counterNumber > 0) average = sum / counterNumber;
         } catch (NumberFormatException e) {
-            System.out.println("Invalid input. Please enter a valid number or 'q' to finish.");
+            System.out.println("Can't divided by 0");
         }
 
         return average;
