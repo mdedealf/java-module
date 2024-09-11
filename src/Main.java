@@ -1,9 +1,5 @@
-import exercises.day7.CalculateAverage;
-import exercises.day7.CsvFileReader;
+import exercises.day8.MainMenu;
 
-import java.io.IOException;
-import java.nio.file.NoSuchFileException;
-import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -299,7 +295,9 @@ public class Main {
 
         //  EXERCISE DAY 8
 
-
+        // TICKETING SYSTEM
+        MainMenu mainMenu = new MainMenu(sc);
+        mainMenu.runMainMenu();
 
         sc.close();
     }

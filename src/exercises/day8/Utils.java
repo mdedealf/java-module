@@ -9,7 +9,7 @@ public class Utils {
         return uuid.toString().replaceAll("-", "").toUpperCase();
     }
 
-    public static String generateCustomerUuid() {
+    public static String generateUserUuid() {
         UUID uuid = UUID.randomUUID();
         return uuid.toString().toUpperCase();
     }

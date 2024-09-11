@@ -1,32 +1,34 @@
 package exercises.day8;
 
-public class Ticket {
-    private String uuid;
-    private String name;
+import java.sql.SQLOutput;
+
+public class Ticket implements Ticketable{
+    private String ticketId;
+    private String eventName;
     private double price;
-    private int quantity;
+    private String username;
 
-    public Ticket(String uuid, String name, double price, int quantity) {
-        this.uuid = uuid;
-        this.name = name;
+    public Ticket(String eventName, double price, String username) {
+        this.ticketId = Utils.generateTicketUuid();
+        this.eventName = eventName;
         this.price = price;
-        this.quantity = quantity;
+        this.username = username;
     }
 
-    public String getUuid() {
-        return uuid;
+    public String getTicketId() {
+        return ticketId;
     }
 
-    public void setUuid(String uuid) {
-        this.uuid = uuid;
+    public void setTicketId(String ticketId) {
+        this.ticketId = ticketId;
     }
 
-    public String getName() {
-        return name;
+    public String getEventName() {
+        return eventName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setEventName(String eventName) {
+        this.eventName = eventName;
     }
 
     public double getPrice() {
@@ -37,11 +39,22 @@ public class Ticket {
         this.price = price;
     }
 
-    public int getQuantity() {
-        return quantity;
+    public String getUsername() {
+        return username;
     }
 
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    @Override
+    public void printTicketDetails() {
+        System.out.println("\n===========================");
+        System.out.println("Ticket Booking detail : ");
+        System.out.println("Ticket Id : " + ticketId);
+        System.out.println("Event Name : " + eventName);
+        System.out.println("Price : " + price);
+        System.out.println("Name : " + username);
+        System.out.println("===========================");
     }
 }
