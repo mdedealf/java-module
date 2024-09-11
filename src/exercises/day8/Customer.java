@@ -1,6 +1,7 @@
 package exercises.day8;
 
-public class User {
+public class Customer {
     String name;
     int age;
+    String customerId;
 }
