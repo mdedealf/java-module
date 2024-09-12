@@ -44,6 +44,7 @@ public class User {
                 System.out.println((counterIdx+1) + ". "+todo.getTodoDescription());
                 counterIdx++;
             }
+            System.out.println();
         }
     }
 
