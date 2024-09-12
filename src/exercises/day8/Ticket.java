@@ -49,12 +49,12 @@ public class Ticket implements Ticketable{
 
     @Override
     public void printTicketDetails() {
-        System.out.println("\n===========================");
+        System.out.println("\n===============================================");
         System.out.println("Ticket Booking detail : ");
         System.out.println("Ticket Id : " + ticketId);
         System.out.println("Event Name : " + eventName);
         System.out.println("Price : " + price);
         System.out.println("Name : " + username);
-        System.out.println("===========================");
+        System.out.println("===============================================");
     }
 }

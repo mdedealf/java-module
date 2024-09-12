@@ -38,4 +38,8 @@ public class Event {
     public void reduceTicketStock() {
         this.stockTicket--;
     }
+
+    public void increaseTicketStock() {
+        this.stockTicket++;
+    }
 }

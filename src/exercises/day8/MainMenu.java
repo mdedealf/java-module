@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class MainMenu {
     private List<Event> events = new ArrayList<>();
     private List<Ticket> tickets = new ArrayList<>();
+    private List<User> users = new ArrayList<>();
     private final Scanner scanner;
 
     public MainMenu(Scanner scanner) {
@@ -14,13 +15,26 @@ public class MainMenu {
     }
 
     public void runMainMenu() {
-        TicketingSystem ticketingSystem = new TicketingSystem(events,tickets, scanner);
+        // create instance object of TicketingSystem class
+        TicketingSystem ticketingSystem = new TicketingSystem(events,tickets,users, scanner);
 
+        // create a user as customer
+        User newUser = ticketingSystem.createUser();
+        System.out.println(newUser.getName()+" "+ newUser.getCustomerId());
+
+        // generate existed events
+        ticketingSystem.createEvent();
+
+        // always run the looping until user choose to exit the program
         while (true) {
-            System.out.println("\n======== Ticketing System ========");
+            System.out.println("\n============ Ticketing System ============");
             System.out.println("1. Show available events");
             System.out.println("2. Booking tickets");
-            System.out.println("3. Exit");
+            System.out.println("3. Un - Booking tickets");
+            System.out.println("4. Show booked tickets list");
+            System.out.println("5. Exit");
+
+            // user enter a number to select menu
             System.out.print("Select menu option : ");
             int userChoice = scanner.nextInt();
             scanner.nextLine();
@@ -28,13 +42,17 @@ public class MainMenu {
 
             switch (userChoice) {
                 case 1:
-                    ticketingSystem.createEvent();
                     ticketingSystem.showAvailableEvents();
                     break;
                 case 2:
-                    ticketingSystem.bookingTicket(events);
+                    ticketingSystem.bookingTicket(events, newUser);
                     break;
                 case 3:
+                    ticketingSystem.unBookingTicket(events, newUser);
+                case 4:
+                    newUser.showBookedTickets();
+                    break;
+                case 5:
                     System.out.println("Exit the program, see you later!");
                     return;
                 default:
