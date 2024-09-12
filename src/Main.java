@@ -1,4 +1,4 @@
-import exercises.day8.MainMenu;
+import exercises.day9.ApplicationSystem;
 
 import java.util.Scanner;
 
@@ -296,8 +296,14 @@ public class Main {
         //  EXERCISE DAY 8
 
         // TICKETING SYSTEM
-        MainMenu mainMenu = new MainMenu(sc);
-        mainMenu.runMainMenu();
+//        MainMenu ticketingMainMenu = new MainMenu(sc);
+//        ticketingMainMenu.runMainMenu();
+
+        // EXERCISE DAY 9
+
+        // USER MANAGEMENT AND TO-DO LIST MANAGEMENT
+        ApplicationSystem todoApplicaton = new ApplicationSystem(sc);
+        todoApplicaton.runMainMenu();
 
         sc.close();
     }
