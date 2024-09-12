@@ -30,7 +30,7 @@ public class MainMenu {
             System.out.println("\n============ Ticketing System ============");
             System.out.println("1. Show available events");
             System.out.println("2. Booking tickets");
-            System.out.println("3. Un - Booking tickets");
+            System.out.println("3. Unbooked tickets");
             System.out.println("4. Show booked tickets list");
             System.out.println("5. Exit");
 
