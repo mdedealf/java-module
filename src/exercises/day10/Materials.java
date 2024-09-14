@@ -5,10 +5,10 @@ abstract class Materials {
     protected int totalCopies;
     protected int availableCopies;
 
-    public Materials(String title, int totalCopies, int availableCopies) {
+    public Materials(String title, int totalCopies) {
         this.title = title;
         this.totalCopies = totalCopies;
-        this.availableCopies = availableCopies;
+        this.availableCopies = totalCopies;
     }
 
     public String getTitle() {
