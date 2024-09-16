@@ -1,7 +1,5 @@
-import exercises.day8.MainMenu;
-import exercises.day9.ApplicationSystem;
+import exercises.day10.LibrarySystem;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -308,6 +306,8 @@ public class Main {
 //        todoApplication.runMainMenu();
 
         // EXERCISE DAY 10
+        LibrarySystem libraryManagementSystem = new LibrarySystem(sc);
+        libraryManagementSystem.runLibrary();
 
         sc.close();
     }
