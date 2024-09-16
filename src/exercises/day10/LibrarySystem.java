@@ -38,7 +38,7 @@ public class LibrarySystem {
                 case 1 -> loginAccount();
                 case 2 -> registerAccount();
                 case 3 -> {
-                    System.out.println("Exit the system, see yaa later.");
+                    System.out.println("Exit the system, see yaa later.\n");
                     return;
                 }
                 default -> System.out.println("Invalid option. Please input the valid one.\n");
@@ -48,6 +48,7 @@ public class LibrarySystem {
 
     public static void registerAccount() {
         List<String> utils = Utils.inputUsernamePassword(scanner);
+
         System.out.println("User Type : 1. Admin | 2. Normal user");
         int userRole = scanner.nextInt();
         scanner.nextLine();
@@ -90,7 +91,7 @@ public class LibrarySystem {
                 case 2 -> deleteMaterial(admin);
                 case 3 -> admin.viewMaterial(materials);
                 case 4 -> {
-                    System.out.println("Logging out program, see yaa later.");
+                    System.out.println("Logging out program, see yaa later.\n");
                     return;
                 }
                 default -> System.out.println("Invalid option. Please input the valid one.\n");
@@ -135,12 +136,14 @@ public class LibrarySystem {
             user.showMenu();
             System.out.print("Enter your option choice : ");
             int userOption = scanner.nextInt();
+            scanner.nextLine();
 
             switch (userOption) {
                 case 1 -> user.viewAvailableMaterials(materials);
                 case 2 -> borrowMaterial(user);
                 case 3 -> returnMaterial(user);
-                case 4 -> {
+                case 4 -> user.viewBorrowedMaterials();
+                case 5 -> {
                     System.out.println("Logging out program, see yaa later.");
                     return;
                 }

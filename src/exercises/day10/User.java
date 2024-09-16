@@ -1,7 +1,7 @@
 package exercises.day10;
 
 public abstract class User {
-    private String username;
+    private final String username;
     String password;
 
     public User(String username, String password) {

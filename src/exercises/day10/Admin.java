@@ -12,7 +12,7 @@ public class Admin extends User{
 
     @Override
     public void showMenu() {
-        System.out.println("===== Admin Menu =====");
+        System.out.println("\n===== Admin Menu =====");
         System.out.println("1. Add new material " +
                 "\n2. Delete material" +
                 "\n3. View all materials" +
@@ -30,9 +30,11 @@ public class Admin extends User{
     }
 
     public void viewMaterial(List<Material> materials) {
-        System.out.println("==== Available materials ====");
+        System.out.println("\n==== Available materials ====");
+        if(materials.isEmpty()) System.out.println("No material found.");
         for(Material material : materials) {
             material.printDetails();
         }
+        System.out.println("-----------------------------");
     }
 }
