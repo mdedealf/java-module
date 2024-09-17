@@ -1,5 +1,7 @@
 package exercises.day11;
 
+import java.util.EmptyStackException;
+
 /**
  * Write a Java stack program that can scale dynamically
  * <p>
@@ -15,91 +17,81 @@ package exercises.day11;
  * Memory Efficiency: The stack should use memory efficiently, allocating and deallocating memory dynamically as needed.
  * Error Handling: The program should handle edge cases gracefully, such as attempting to pop an element from an empty stack, and provide clear error messages.
  */
-public class StackProgram {
-    private Node head;
+public class StackProgram<T> {
+    private Node<T> top; // initialize top of the stack
+    private int size = 0; // set size start from 0 will be increase later automatically
 
-    // Node class
-    private static class Node {
-        int data;
-        Node next;
+    // use generic data type as a dynamic input
+    public static class Node<T> {
+        T data;
+        Node<T> next;
 
-        Node(int data) {
+        public Node(T data) {
             this.data = data;
             this.next = null;
         }
     }
 
-    // Insert at the beginning
-    public void insertAtBeginning(int data) {
-        Node newNode = new Node(data);
-        newNode.next = head;
-        head = newNode;
+    public void push(T data) {
+        Node<T> newNode = new Node<>(data);
+        newNode.next = top;
+        top = newNode;
+
+        // increase the size after pushing a new element
+        size++;
     }
 
-    // Insert at the end
-    public void insertAtEnd(int data) {
-        Node newNode = new Node(data);
-        if (head == null) {
-            head = newNode;
-        } else {
-            Node last = head;
-            while (last.next != null) {
-                last = last.next;
-            }
-            last.next = newNode;
+    public T pop() {
+        if(isEmpty()) {
+            throw new EmptyStackException();
         }
+        T result = top.data;
+        top = top.next;
+        size--;
+        return result;
     }
 
-    // Delete by key
-    public void deleteByKey(int key) {
-        Node current = head, prev = null;
-        if (current != null && current.data == key) {
-            head = current.next;
-            return;
+    public T peek() {
+        if(isEmpty()) {
+            throw new EmptyStackException();
         }
-        while (current != null && current.data != key) {
-            prev = current;
+        return top.data;
+    }
+
+    public void printStack() {
+        Node<T> current = top;
+        while(current != null) {
+            System.out.println(current.data + " ");
+
+            // move the current node
             current = current.next;
         }
-        if (current != null) {
-            prev.next = current.next;
-        }
     }
 
-    // Print the list
-    public void printList() {
-        Node current = head;
-        while (current != null) {
-            System.out.print(current.data + " ");
-            current = current.next;
-        }
-        System.out.println();
-    }
-
-    // Size of the list
     public int size() {
-        int size = 0;
-        Node current = head;
-        while (current != null) {
-            size++;
-            current = current.next;
-        }
         return size;
     }
 
-    // String representation of the list
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        Node current = head;
-        while (current != null) {
-            sb.append(current.data).append(" ");
-            current = current.next;
-        }
-        return sb.toString();
+    public boolean isEmpty() {
+        return size == 0;
     }
 
     public static void main(String[] args) {
-        StackProgram sp = new StackProgram();
+        StackProgram<Integer> stack = new StackProgram<>();
+
+        System.out.println("Is empty : " + stack.isEmpty());
+        stack.push(11);
+        stack.push(12);
+        stack.push(13);
+        stack.push(14);
+
+        System.out.println("peek : " + stack.peek());
+        stack.printStack();
+
+        System.out.println("Pop : " + stack.pop());
+        System.out.println();
+        stack.printStack();
+        System.out.println("peek : " + stack.peek());
+        System.out.println("Is empty : " + stack.isEmpty());
     }
 }
