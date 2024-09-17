@@ -22,7 +22,7 @@ public class StackProgram<T> {
     private int size = 0; // set size start from 0 will be increase later automatically
 
     // use generic data type as a dynamic input
-    public static class Node<T> {
+    private static class Node<T> {
         T data;
         Node<T> next;
 
