@@ -43,7 +43,7 @@ public class StackProgram<T> {
 
     public T pop() {
         if(isEmpty()) {
-            throw new EmptyStackException();
+            System.out.println("Stack is empty");
         }
         T result = top.data;
         top = top.next;
@@ -60,6 +60,12 @@ public class StackProgram<T> {
 
     public void printStack() {
         Node<T> current = top;
+
+        // check if stack is empty
+        if(current == null) {
+            System.out.println("Stack is empty");
+        }
+
         while(current != null) {
             System.out.println(current.data + " ");
 
@@ -76,7 +82,7 @@ public class StackProgram<T> {
         return size == 0;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args){
         StackProgram<Integer> stack = new StackProgram<>();
 
         System.out.println("Is empty : " + stack.isEmpty());
