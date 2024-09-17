@@ -35,6 +35,6 @@ public class Admin extends User{
         for(Material material : materials) {
             material.printDetails();
         }
-        System.out.println("-----------------------------");
+        System.out.println("-------------------------- ---");
     }
 }
