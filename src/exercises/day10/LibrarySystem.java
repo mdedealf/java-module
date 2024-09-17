@@ -13,7 +13,7 @@ public class LibrarySystem {
     private static Scanner scanner;
 
     public LibrarySystem(Scanner scanner) {
-        this.scanner = scanner;
+        LibrarySystem.scanner = scanner;
     }
 
     public void runLibrary() {
@@ -70,8 +70,10 @@ public class LibrarySystem {
         User user = users.get(utils.getFirst());
         if(user != null && user.password.equals(utils.getLast())) {
             if(user instanceof Admin) {
+                System.out.println("Successfully logged in as an admin.");
                 adminMenu((Admin) user);
             } else if(user instanceof NormalUser) {
+                System.out.println("Successfully logged in as an user.");
                 userMenu((NormalUser) user);
             }
         } else {
@@ -98,7 +100,6 @@ public class LibrarySystem {
             }
         }
     }
-
 
     public static void addMaterial(Admin admin) {
         System.out.print("Enter Material type (Book / Magazine / DVD) : ");

@@ -29,6 +29,7 @@ public class NormalUser extends User {
         for(Material material : materials) {
             if(material.isAvailable()) material.printDetails();
         }
+        System.out.println("-------------------------------");
     }
 
     public void borrowMaterial(List<Material> materials, UUID materialId) {
@@ -61,5 +62,6 @@ public class NormalUser extends User {
                 material.printDetails();
             }
         }
+        System.out.println("-----------------------------");
     }
 }
