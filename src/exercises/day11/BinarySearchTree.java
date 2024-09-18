@@ -76,7 +76,7 @@ public class BinarySearchTree {
             printTree(root.left);
 
             // visit the root node
-            System.out.print(root.data + " ");
+            System.out.println(root.data + " ");
 
             // traverse right subtree
             printTree(root.right);

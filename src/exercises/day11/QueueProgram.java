@@ -103,6 +103,7 @@ public class QueueProgram<T> {
         queue.enQueue(3);
         queue.printQueue();
         System.out.println("Peek : " + queue.peek());
+        System.out.println("Queue size : " + queue.size());
         System.out.println("Dequeue front data : " + queue.deQueue());
         System.out.println();
         queue.printQueue();
