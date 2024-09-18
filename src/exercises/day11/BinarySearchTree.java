@@ -66,6 +66,23 @@ public class BinarySearchTree {
         return searchRec(root.right, data);
     }
 
+    private void printInOrder() {
+        printTree(root);
+    }
+
+    private void printTree(TreeNode root) {
+        if (root != null) {
+            // traverse left subtree
+            printTree(root.left);
+
+            // visit the root node
+            System.out.print(root.data + " ");
+
+            // traverse right subtree
+            printTree(root.right);
+        }
+    }
+
     // search for a given key in the BST
     public boolean search(int data) {
         return searchRec(root, data);
@@ -90,6 +107,9 @@ public class BinarySearchTree {
            tree.insert(number);
         }
 
+        tree.printInOrder();
+        System.out.println();
+
         // perform continuous search
         while (true) {
             System.out.print("Enter a number to search or type ('q') to exit : ");
@@ -103,9 +123,9 @@ public class BinarySearchTree {
             } else {
                 String option = scanner.nextLine();
                 if(option.equalsIgnoreCase("q")) {
-                    System.out.println("Exit the program, see yaa later!");
+                    System.out.println("\nExit the program, see yaa later!");
                     break;
-                } else System.out.println("Invalid option, please enter the valid one.");
+                } else System.out.println("\nInvalid option, please enter the valid one.");
             }
         }
 

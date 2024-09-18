@@ -66,6 +66,14 @@ public class QueueProgram<T> {
         return null;
     }
 
+    public T peek() {
+        if(front == null) {
+            System.out.println("Queue is empty");
+            return null;
+        }
+        return front.data;
+    }
+
     public void printQueue() {
         Node<T> currentNode = front;
         while(currentNode != null) {
@@ -89,13 +97,16 @@ public class QueueProgram<T> {
 
         System.out.println("Queue size : " + queue.size());
         System.out.println("Is queue empty : " + queue.isEmpty());
+        System.out.println("Peek : " + queue.peek());
         queue.enQueue(1);
         queue.enQueue(2);
         queue.enQueue(3);
         queue.printQueue();
+        System.out.println("Peek : " + queue.peek());
         System.out.println("Dequeue front data : " + queue.deQueue());
         System.out.println();
         queue.printQueue();
+        System.out.println("Peek : " + queue.peek());
         System.out.println("Queue size : " + queue.size());
         System.out.println("Is queue empty : " + queue.isEmpty());
     }
