@@ -10,10 +10,10 @@ public class AnagramChecker {
     }
 
     public static void bubbleSort(char[] arr) {
-        int arrSize = arr.length - 1;
+        int arrSize = arr.length;
 
-        for(int i = 0; i < arrSize; i++) {
-            for(int j = 0; j < arrSize - i; j++) {
+        for(int i = 0; i < arrSize - 1; i++) {
+            for(int j = 0; j < arrSize - i - 1; j++) {
                 if(arr[j] > arr[j+1]) {
                     char tempEl = arr[j];
                     arr[j] = arr[j+1];
